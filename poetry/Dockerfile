@@ -1,7 +1,7 @@
 FROM alpine:latest
 
-LABEL maintainer="Victor Borja <vborja@apache.org>"
-LABEL updated_at=2017-07-23
+LABEL maintainer="the pintz <thepintz@gmail.com>"
+LABEL updated_at="02/12/2024"
 
 # coreutils should add standard sort 
 

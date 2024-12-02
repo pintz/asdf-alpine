@@ -1,0 +1,1 @@
+terraform "${PLUGIN_COMMAND}"

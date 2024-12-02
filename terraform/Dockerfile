@@ -23,7 +23,9 @@ RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
     source ~/.bashrc && \
     mkdir -p $HOME/.asdf/toolset
 
+USER asdf
 RUN for PKG in "$(cat /asdf/.tool-versions | grep -v '^#' | awk '{print $1}')"; do asdf plugin add ${PKG}; done && \
     asdf install
 
+USER asdf
 ENTRYPOINT /entrypoint.sh

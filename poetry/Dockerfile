@@ -13,7 +13,7 @@ ENV PATH="${PATH}:/asdf/.asdf/shims:/asdf/.asdf/bin"
 USER asdf
 WORKDIR /asdf
 
-COPY tool-versions /asdf/.tool-versions
+COPY poetry/tool-versions /asdf/.tool-versions
 
 USER asdf
 RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \

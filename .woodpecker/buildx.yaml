@@ -2,7 +2,7 @@ labels:
   platform: linux/arm64
 
 steps: 
-   - name: publish-poetry 
+   - name: publish-poetry
      image: woodpeckerci/plugin-docker-buildx
      settings:
        registry: ghcr.io

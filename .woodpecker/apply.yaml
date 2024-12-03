@@ -1,0 +1,14 @@
+labels:
+  platform: linux/arm64
+
+steps: 
+   - name: terraform plan 
+     image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
+     settings:
+       command: " -chdir=/asdf/asdf-alpine/test/terraform plan"
+
+   - name: terraform auto-approve 
+     image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
+     settings:
+       command: " -chdir=/asdf/asdf-alpine/test/terraform apply -auto-approve"
+

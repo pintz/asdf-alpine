@@ -5,7 +5,8 @@ steps:
    - name: terraform plan 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
      settings:
-       command: "-chdir=${CI_WORKSPACE}/asdf-alpine/test/terraform plan"
+      #command: "-chdir=${CI_WORKSPACE}/asdf-alpine/test/terraform plan"
+       command: "-chdir=asdf-alpine/test/terraform plan"
 
    - name: terraform auto-approve 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2 

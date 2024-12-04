@@ -3,12 +3,12 @@ labels:
 
 steps: 
    - name: terraform plan 
-     image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
+     image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug
      settings:
        command: "-chdir=./test/terraform plan"
 
    - name: terraform auto-approve 
-     image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
+     image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug 
      settings:
        command: "-chdir=./test/terraform apply -auto-approve"
 

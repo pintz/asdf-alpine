@@ -12,9 +12,11 @@ steps:
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug
      settings:
        command: "plan"
+       path: "test/terraform"
 
    - name: terraform auto-approve 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug 
      settings:
        command: "apply"
+       path: "test/terraform"
 

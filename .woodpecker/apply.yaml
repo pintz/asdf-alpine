@@ -5,10 +5,10 @@ steps:
    - name: terraform plan 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
      settings:
-       command: "-chdir=/woodpecker/src/github.com/pintz/asdf-alpine/test/terraform plan"
+       command: "-chdir=./test/terraform plan"
 
    - name: terraform auto-approve 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
      settings:
-       command: "-chdir=/woodpecker/src/github.com/pintz/asdf-alpine/test/terraform apply -auto-approve"
+       command: "-chdir=./test/terraform apply -auto-approve"
 

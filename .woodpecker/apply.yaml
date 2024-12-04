@@ -5,6 +5,12 @@ steps:
    - name: terraform plan 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug
      settings:
+       command: "init"
+       path: "test/terraform"
+
+   - name: terraform plan 
+     image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug
+     settings:
        command: "plan"
        path: "test/terraform"
 

@@ -11,12 +11,12 @@ steps:
    - name: terraform plan 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug
      settings:
-       command: "plan"
+       command: "plan -lock=false"
        path: "test/terraform"
 
    - name: terraform auto-approve 
      image: ghcr.io/pintz-org/asdf-terraform:1.8.2_debug 
      settings:
-       command: "apply -auto-approve"
+       command: "apply -auto-approve -lock=false"
        path: "test/terraform"
 

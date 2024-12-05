@@ -1,5 +1,7 @@
 #!/bin/bash
 
+tail -f /dev/null
+
 # if [ -z ${PLUGIN_PATH+x} ]
 # then 
 # 	echo "PATH variable is not setted"

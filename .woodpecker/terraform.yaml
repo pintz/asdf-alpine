@@ -20,6 +20,6 @@ steps:
     image: ghcr.io/pintz-org/asdf-terraform:1.8.2 
     pull: true
     settings:
-      command: 'apply --auto-approve'
+      command: "apply --auto-approve"
       path: "test/terraform"
 

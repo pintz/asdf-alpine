@@ -2,6 +2,18 @@ labels:
   platform: linux/arm64
 
 steps: 
+  - name: publish-ansible-core
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      registry: ghcr.io
+      repo: ghcr.io/pintz-org/asdf-ansible-core 
+      dockerfile: ansible/Dockerfile
+      platforms: linux/amd64,linux/arm64/v8
+      tag: 2.10.17
+      username: pintz
+      password:
+        from_secret: github_pat
+
    # - name: publish-poetry
    #   image: woodpeckerci/plugin-docker-buildx
    #   settings:
@@ -25,16 +37,4 @@ steps:
    #     username: pintz
    #     password:
    #       from_secret: github_pat
-
-   - name: publish-ansible-core
-     image: woodpeckerci/plugin-docker-buildx
-     settings:
-       registry: ghcr.io
-       repo: ghcr.io/pintz-org/asdf-ansible-core 
-       dockerfile: ansible/Dockerfile
-       platforms: linux/amd64,linux/arm64/v8
-       tag: 2.10.17
-       username: pintz
-       password:
-         from_secret: github_pat
 

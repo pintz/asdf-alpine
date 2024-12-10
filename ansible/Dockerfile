@@ -5,7 +5,7 @@ LABEL updated_at="02/12/2024"
 
 # coreutils should add standard sort 
 
-RUN apk add --virtual .asdf-deps --no-cache bash curl git coreutils
+RUN apk add --virtual .asdf-deps --no-cache bash curl git coreutils python3 
 SHELL ["/bin/bash", "-l", "-c"]
 RUN adduser -s /bin/bash -h /asdf -D asdf
 ENV PATH="${PATH}:/root/.asdf/shims:/root/.asdf/bin"
@@ -22,7 +22,7 @@ RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
     source ~/.bashrc && \
     mkdir -p $HOME/.asdf/toolset
 
-RUN for PKG in "$(cat /root/.tool-versions | grep -v '^#' | awk '{print $1}')"; do asdf plugin add ${PKG}; done && \
+RUN for PKG in "$(cat /root/.tool-versions | grep -v '^#' | awk '{print $1}')"; do echo "installing $PKG"; asdf plugin add ${PKG}; done && \
     asdf install
 
 ENTRYPOINT /entrypoint.sh

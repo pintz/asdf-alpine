@@ -13,8 +13,8 @@ ENV PATH="${PATH}:/root/.asdf/shims:/root/.asdf/bin"
 USER root
 WORKDIR /root
 
-COPY terraform/tool-versions /root/.tool-versions
-COPY terraform/entrypoint.sh /entrypoint.sh
+COPY ansible/tool-versions /root/.tool-versions
+COPY ansible/entrypoint.sh /entrypoint.sh
 
 RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
     echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc && \

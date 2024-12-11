@@ -1,0 +1,21 @@
+# labels:
+#   platform: linux/arm64
+#
+# steps:
+#   - name: test ansible version 
+#     image: ghcr.io/pintz-org/asdf-ansible-core:2.10.17
+#     pull: true
+#     settings:
+#       command: "ansible-playbook --version"
+#       path: "test/ansible"
+labels:
+  platform: linux/arm64
+
+steps:
+  - name: test ansible version
+    image: ghcr.io/pintz-org/asdf-ansible-core:2.10.17
+    pull: true
+    settings:
+      command: "ansible-playbook --version"
+      path: "test/ansible"
+

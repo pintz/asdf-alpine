@@ -5,6 +5,9 @@ then
 	mkdir ${HOME}/.ssh
 	echo -e "${PLUGIN_PRIVATE_KEY}" > ${HOME}/.ssh/id_rsa
 	chmod 400 -R ${HOME}/.ssh
+	chmod 700 -R ${HOME}/.ssh/id_rsa
+else
+	echo "please set PRIVATE_KEY variable "
 fi
 
 if [ -z ${PLUGIN_PATH+x} ]

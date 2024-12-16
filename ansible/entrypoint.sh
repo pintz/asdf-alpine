@@ -10,19 +10,21 @@ else
 	echo "please set PRIVATE_KEY variable "
 fi
 
-if [ -z ${PLUGIN_PATH+x} ]
+if [ ! -z ${PLUGIN_PATH+x} ]
 then 
-	echo "PATH variable is not setted"
-	# entrypoint to launch command PLUGIN_COMMAND 
-	echo -e "#!/usr/bin/bash\n${PLUGIN_COMMAND}" > launcher.sh
-	chmod 755 launcher.sh 
-	./launcher.sh
-
-else
 	echo "PATH variable is setted to : ${PLUGIN_PATH}"
 	cd ${PLUGIN_PATH}
-	echo -e "#!/usr/bin/bash\n${PLUGIN_COMMAND}" > launcher.sh
-	chmod 755 launcher.sh 
-	./launcher.sh
+else 
+	echo "PATH variable is not setted"
 fi
+
+echo "Launching command : ${PLUGIN_COMMAND}"
+echo "located in"
+pwd
+ls
+
+
+echo -e "#!/usr/bin/bash\n${PLUGIN_COMMAND}" > launcher.sh
+chmod 755 launcher.sh 
+./launcher.sh
 

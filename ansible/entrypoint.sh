@@ -23,8 +23,9 @@ echo "located in"
 pwd
 ls
 
+/usr/bin/bash -c ${PLUGIN_COMMAND}
 
-echo -e "#!/usr/bin/bash\n${PLUGIN_COMMAND}" > launcher.sh
-chmod 755 launcher.sh 
-./launcher.sh
+# echo -e "#!/usr/bin/bash\n${PLUGIN_COMMAND}" > launcher.sh
+# chmod 755 launcher.sh 
+# ./launcher.sh
 

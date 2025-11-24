@@ -35,3 +35,7 @@ docker run --env PLUGIN_COMMAND="plan --help" ghcr.io/pintz-org/asdf-terraform:1
 
 * [X] Test multiple commands like : docker run --env PLUGIN_COMMAND="apply -auto-approve" ghcr.io/pintz-org/asdf-terraform:1.8.2
 * [ ] Should manage command with several parameters the [complex settings](https://woodpecker-ci.org/docs/usage/plugins/creating-plugins#complex-settings)
+
+
+# Useful link 
+[Stephane-Robert](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)

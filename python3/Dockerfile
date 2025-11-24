@@ -11,7 +11,7 @@ RUN apk add --no-cache bash python3  \
     jq  
 
 # source : # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+COPY python3/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh 
 
